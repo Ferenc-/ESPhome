@@ -191,24 +191,14 @@ binary_sensor:
       number: 33
       inverted: true
 
-dallas:
-  - pin: 14
-
 sensor:
-  - platform: dallas
-    address: 0x493c01e07662bc28
-    name: "ds18b20-1"
-    filters:
-      - filter_out: nan
-
-#sensor:
-#  - platform: dht
-#    pin:
-#    temperature:
-#      name: "WG Temperature"
-#    humidity:
-#      name: "WG Humidity"
-#    update_interval: 60s
+  - platform: dht
+    pin: 14
+    temperature:
+      name: "WG Temperature"
+    humidity:
+      name: "WG Humidity"
+    update_interval: 60s
 
 
 # Enable logging
