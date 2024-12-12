@@ -216,5 +216,4 @@ web_server:
 ota:
 - platform: esphome
   port: 3232
-  safe_mode: true
   password: XXX
