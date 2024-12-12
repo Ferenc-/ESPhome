@@ -102,7 +102,7 @@ switch:
       inverted: true
 
   - platform: gpio
-    name: "Shutter 3 down"
+    name: "Shutter 4 down"
     id: shutter_4_down
     pin:
       pcf8574: pcf8574_hub_out_1
