@@ -41,7 +41,6 @@ switch:
   - platform: gpio
     name: "Shutter 1 up"
     id: shutter_1_up
-    icon: "mdi:shutter"
     pin:
       pcf8574: pcf8574_hub_out_1
       number: 0
