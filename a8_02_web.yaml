@@ -208,6 +208,10 @@ api:
 # Browser access
 web_server:
   port: 80
+  ota: true
+  auth:
+    username:
+    password:
 
 ota:
   port: 3232
