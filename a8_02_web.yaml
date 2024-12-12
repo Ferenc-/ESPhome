@@ -42,9 +42,6 @@ switch:
     name: "Shutter 1 up"
     id: shutter_1_up
     icon: "mdi:shutter"
-    on_turn_on:
-    - delay: 500ms
-    - switch.turn_off: garage_door
     pin:
       pcf8574: pcf8574_hub_out_1
       number: 0
