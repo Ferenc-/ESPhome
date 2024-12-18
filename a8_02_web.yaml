@@ -187,15 +187,6 @@ binary_sensor:
       number: 33
       inverted: true
 
-sensor:
-  - platform: dht
-    pin: 14
-    temperature:
-      name: "WG Temperature"
-    humidity:
-      name: "WG Humidity"
-    update_interval: 60s
-
 
 # Enable logging
 logger:
