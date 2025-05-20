@@ -8,6 +8,10 @@ Before you begin ensure that the a `CP2101` is used for flashing and NOT an alte
 Do not use Arduino IDE to upload binaries, Arduino IDE has a weird bug, so export with `Sketch` > `Export compiled Binary` and `Sketch` > `Show Sketch Folder`,
 then the `bin` file is in the `build` directory, that needs to be uploaded with `esptool`.
 
+Don't forget to close Arduino IDE before switching to `esptool`.
+Otherwise Arduino IDE will keep your `/dev/ttyUSB0` device busy,
+and won't allow `esptool` to use it.
+ 
 ```bash
 ### Chip ID
 myvenv/bin/esptool.py --port /dev/ttyUSB0 --chip esp8266 --no-stub  chip_id
