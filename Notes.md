@@ -22,3 +22,7 @@ myvenv/bin/esptool.py --port /dev/ttyUSB0 --chip esp8266 erase_flash
 ### Flash new build
 myvenv/bin/esptool.py --port /dev/ttyUSB0 --chip esp8266 write_flash --flash_mode dio --flash_size detect 0x0 esp8266-midea-dehumidifier.ino.bin
 ```
+
+Once flashed via serial, flashing via [OTA](https://github.com/JAndrassy/ArduinoOTA)
+works just fine from Arduino IDE, but keep in mind that re-flashing does not wipe the configuration data,
+which is often the blocker of a successful startup/connection.
