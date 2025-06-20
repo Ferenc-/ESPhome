@@ -1,4 +1,5 @@
 substitutions:
+  # Check https://github.com/athom-tech/athom-configs
   name: "athom-smart-plug-v2"
   friendly_name: "Smart Plug V2"
   # Allows ESP device to be automatically lined to an 'Area' in Home Assistant. Typically used for areas such as 'Lounge Room', 'Kitchen' etc
