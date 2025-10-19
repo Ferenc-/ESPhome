@@ -14,7 +14,7 @@ and won't allow `esptool` to use it.
  
 ```bash
 ### Chip ID
-myvenv/bin/esptool.py --port /dev/ttyUSB0 --chip esp8266 --no-stub  chip_id
+myvenv/bin/esptool.py --port /dev/ttyUSB0 --chip esp8266 --no-stub chip-id
 
 ### Erase Flash if needed
 myvenv/bin/esptool.py --port /dev/ttyUSB0 --chip esp8266 erase_flash
