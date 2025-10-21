@@ -26,3 +26,10 @@ myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 write_flash --flash_mode d
 Once flashed via serial, flashing via [OTA](https://github.com/JAndrassy/ArduinoOTA)
 works just fine from Arduino IDE, but keep in mind that re-flashing does not wipe the configuration data,
 which is often the blocker of a successful startup/connection.
+
+## WT32-ETH01
+
+```bash
+### There is no Chip ID so use MAC address instead for ID
+myvenv_latest/bin/esptool --port /dev/ttyUSB0 --chip esp32 --no-stub read-mac
+```
