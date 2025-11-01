@@ -1,0 +1,89 @@
+esphome:
+  name: wt32-eth01
+  friendly_name: Electrical Box
+  min_version: 2025.8.0
+  name_add_mac_suffix: true
+  platformio_options:
+    board_build.flash_mode: dio
+
+esp32:
+  variant: esp32
+  framework:
+    type: esp-idf
+
+ethernet:
+  type: LAN8720
+  mdc_pin: GPIO23
+  mdio_pin: GPIO18
+  clk:
+    pin: GPIO0
+    mode: CLK_EXT_IN
+  phy_addr: 1
+  power_pin: GPIO16
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  port: 6053
+
+# Browser access
+web_server:
+  port: 80
+
+ota:
+  - platform: esphome
+    id: ota_esphome
+    safe_mode: true
+    password: XXX
+
+esp32_ble_tracker:
+  scan_parameters:
+    interval: 1100ms
+    window: 1100ms
+    active: true
+
+bluetooth_proxy:
+  active: true
+
+uart:
+  id: uart_bus
+  rx_pin: GPIO3
+  baud_rate: 9600
+  data_bits: 8
+  parity: NONE
+  stop_bits: 1
+
+sml:
+  id: mysml
+  uart_id: uart_bus
+  
+sensor:
+  - platform: sml
+    name: "Total energy bought"
+    sml_id: mysml
+    obis_code: "1-0:1.8.0"
+    unit_of_measurement: kWh
+    accuracy_decimals: 4
+    device_class: energy
+    state_class: total_increasing
+    filters:
+      - multiply: 0.0001
+  - platform: sml
+    name: "Total energy sold"
+    sml_id: mysml
+    obis_code: "1-0:2.8.0"
+    unit_of_measurement: kWh
+    accuracy_decimals: 4
+    device_class: energy
+    state_class: total_increasing
+    filters:
+      - multiply: 0.0001
+  - platform: sml
+    name: "Current load"
+    sml_id: mysml
+    obis_code: "1-0:16.7.0"
+    unit_of_measurement: W
+    accuracy_decimals: 0
+    device_class: energy
