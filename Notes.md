@@ -33,3 +33,7 @@ which is often the blocker of a successful startup/connection.
 ### There is no Chip ID so use MAC address instead for ID
 myvenv_latest/bin/esptool --port /dev/ttyUSB0 --chip esp32 --no-stub read-mac
 ```
+
+```bash
+esphome clean-all
+```
