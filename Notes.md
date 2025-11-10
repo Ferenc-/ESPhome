@@ -37,3 +37,31 @@ myvenv_latest/bin/esptool --port /dev/ttyUSB0 --chip esp32 --no-stub read-mac
 ```bash
 esphome clean-all
 ```
+
+## Hichi IR ttl
+
+Connectors:
+* Brown: VCC 3.3 - 5V
+* White: GND
+* Green: onto TX
+* Yellow: onto RX
+
+First always test it with directly connected TTL (i.e. `ttyUSB0`):
+```bash
+stty -F /dev/ttyUSB0 9600
+stty -F /dev/ttyUSB0 raw
+cat /dev/ttyUSB0 | hexdump -e '16/1 "%02x " "\n"'
+```
+
+If that works then the IR is functional an properly connected.
+Start reading locally first:
+
+```bash
+./test_asyncio.py /dev/ttyUSB0
+```
+
+once that works set up ESPHome `stream-server` and read via network:
+
+```bash
+./test_asyncio.py socket://192.168.1.126:2001
+```
