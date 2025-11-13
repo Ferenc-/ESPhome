@@ -54,7 +54,8 @@ cat /dev/ttyUSB0 | hexdump -e '16/1 "%02x " "\n"'
 ```
 
 If that works then the IR is functional an properly connected.
-Start reading locally first:
+Start reading locally first via 
+[test_asyncio.py](https://github.com/Ferenc-/pysml/blob/master/examples/test_asyncio.py):
 
 ```bash
 ./test_asyncio.py /dev/ttyUSB0
