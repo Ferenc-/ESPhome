@@ -66,3 +66,14 @@ once that works set up ESPHome `stream-server` and read via network:
 ```bash
 ./test_asyncio.py socket://192.168.1.126:2001
 ```
+
+## Holley DTZ541-ZEBA
+
+If the meter is within secure perimeter, you might want to at least temporarily
+disable the `PIN`:
+
+![alt text](Pin-Off.png "PIN turned OFF")
+
+But you definitely need to enable the `INFO`(`InF`) interface:
+
+![alt text](INFO-On.png "INFO turned ON")
