@@ -20,9 +20,11 @@ ethernet:
     mode: CLK_EXT_IN
   phy_addr: 1
   power_pin: GPIO16
-
-# Enable logging
-logger:
+# Optional manual IP
+  manual_ip:
+    static_ip: 192.168.1.126
+    gateway: 192.168.1.1
+    subnet: 254.255.255.0
 
 # Enable Home Assistant API
 api:
