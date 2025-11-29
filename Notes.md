@@ -28,6 +28,21 @@ works just fine from Arduino IDE, but keep in mind that re-flashing does not wip
 which is often the blocker of a successful startup/connection.
 
 ## WT32-ETH01
+Check the Flashing Mode
+
+![alt text](WT32-ETH-in-flashing-mode.jpg "WT32 ETH in Flashing Mode")
+
+* IOD to GND (orange) is like holding boot on the WT32-ETH01 **Make sure you remove this after flashing** otherwise the device won't boot!
+
+If the device is essentially bricked and doesn't respond on USB nor on ETH,
+then keep pulling out and putting the serial adaper into the laptop's USB,
+and keep trying the erase:
+
+```bash
+python -m esptool --chip esp32 --port /dev/ttyUSB0 erase-flash
+```
+
+Once that is successfull, ensure that you can ID the chip by MAC:
 
 ```bash
 ### There is no Chip ID so use MAC address instead for ID
@@ -36,17 +51,20 @@ myvenv_latest/bin/esptool --port /dev/ttyUSB0 --chip esp32 --no-stub read-mac
 
 ```bash
 esphome clean-all
+esphome run wt32-eth01-SML-Hichi-IR.yaml --device 192.168.1.126
 ```
 
 ## Hichi IR ttl
 
 Connectors:
+
 * Brown: VCC 3.3 - 5V
 * White: GND
 * Green: onto TX
 * Yellow: onto RX
 
 First always test it with directly connected TTL (i.e. `ttyUSB0`):
+
 ```bash
 stty -F /dev/ttyUSB0 9600
 stty -F /dev/ttyUSB0 raw
