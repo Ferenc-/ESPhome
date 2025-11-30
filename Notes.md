@@ -32,7 +32,7 @@ Check the Flashing Mode
 
 ![alt text](WT32-ETH-in-flashing-mode.jpg "WT32 ETH in Flashing Mode")
 
-* IOD to GND (orange) is like holding boot on the WT32-ETH01 **Make sure you remove this after flashing** otherwise the device won't boot!
+* `GPIO0` to `GND` (orange) is like holding boot on the WT32-ETH01. **Make sure you remove this after flashing** otherwise the device won't boot!
 
 If the device is essentially bricked and doesn't respond on USB nor on ETH,
 then keep pulling out and putting the serial adaper into the laptop's USB,
