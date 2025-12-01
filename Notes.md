@@ -32,6 +32,8 @@ Check the Flashing Mode
 
 ![alt text](WT32-ETH-in-flashing-mode.jpg "WT32 ETH in Flashing Mode")
 
+* **To be able to flash the device, `GPIO0` must be connected to ground (`GND`) while the device boots up.**
+  Flashing will not work if you connect these wires after the device has already been booted up.
 * `GPIO0` to `GND` (orange) is like holding boot on the WT32-ETH01. **Make sure you remove this after flashing** otherwise the device won't boot!
 
 If the device is essentially bricked and doesn't respond on USB nor on ETH,
