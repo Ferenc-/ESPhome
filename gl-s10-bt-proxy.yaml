@@ -1,3 +1,5 @@
+# Based on
+# https://devices.esphome.io/devices/gl-inet-gl-s10/#v21
 substitutions:
   name: gl-s10-bt-proxy
   friendly_name: Bluetooth Proxy
@@ -28,6 +30,11 @@ ethernet:
   phy_addr: 1
   power_pin: GPIO5
 
+  # Optional manual IP
+  manual_ip:
+    static_ip: 192.168.1.170
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
 api:
 logger:
 ota:
