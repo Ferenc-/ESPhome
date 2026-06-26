@@ -35,7 +35,11 @@ ethernet:
     static_ip: 192.168.1.170
     gateway: 192.168.1.1
     subnet: 255.255.255.0
+
+# Enable Home Assistant API
 api:
+  port: 6053
+
 logger:
 ota:
 
