@@ -42,6 +42,9 @@ api:
 
 logger:
 ota:
+  platform: esphome
+  port: 3232
+# password: "XXXXXX"
 
 dashboard_import:
   package_import_url: github://blakadder/bluetooth-proxies/gl-s10_v2.yaml@main
