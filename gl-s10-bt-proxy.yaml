@@ -46,6 +46,12 @@ ota:
   port: 3232
 # password: "XXXXXX"
 
+web_server:
+  port: 80
+  auth:
+    username: admin-gl-s10-bt-proxy
+#   password: "XXXXXXXX"
+
 dashboard_import:
   package_import_url: github://blakadder/bluetooth-proxies/gl-s10_v2.yaml@main
 
