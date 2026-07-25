@@ -38,7 +38,7 @@ This flasher is lacking a button to enter flashing mode:
 myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 --no-stub chip-id
 
 ### Erase Flash if needed
-myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 erase_flash
+myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 erase-flash
 
 ### Flash new build
 myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 write_flash --flash_mode dio --flash_size detect 0x0 esp8266-midea-dehumidifier.ino.bin
