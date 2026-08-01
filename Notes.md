@@ -12,6 +12,19 @@ Don't forget to close Arduino IDE before switching to `esptool`.
 Otherwise Arduino IDE will keep your `/dev/ttyUSB0` device busy,
 and won't allow `esptool` to use it.
 
+### Configuring WiFi AP for ESP8266
+
+Ensure that in OpenWrt the option `option short_preamble '0'` is set otherwise ESP8266
+will keep failing to authenticate to your WiFi with:
+
+```
+daemon.info: hostapd: phy0-ap0: STA 72:9e:24:79:77:12 IEEE 802.11: disassociated due to inactivity
+daemon.info: hostapd: phy0-ap0: STA 72:9e:24:79:77:12 IEEE 802.11: deauthenticated due to inactivity (timer DEAUTH/REMOVE)
+```
+
+Contrary to some OpenWrt forum posts, NO need to set WPA2 only,
+mixed mode `Encryption: mixed WPA2/WPA3 PSK, SAE (CCMP)` does work just fine.
+
 ### Flashing with dupont cables only:
 
 ![alt text](ESP+in+flashing+mode-2041729734.jpg "")
