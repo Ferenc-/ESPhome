@@ -61,6 +61,28 @@ Once flashed via serial, flashing via [OTA](https://github.com/JAndrassy/Arduino
 works just fine from Arduino IDE, but keep in mind that re-flashing does not wipe the configuration data,
 which is often the blocker of a successful startup/connection.
 
+## ESP32-C6-Zero-M
+
+Generic docs from [WaveShare](https://docs.waveshare.com/ESP32-C6-Zero).
+To enter download-mode, plug in the USB cable, 
+Hold the `BOOT` button and then press the `RESET`.
+The white LED has to start flashing.
+
+```bash
+lsusb | grep Espressif
+```
+The device should show up as:
+
+```
+Bus 001 Device 073: ID 303a:1001 Espressif USB JTAG/serial debug unit
+```
+
+Once that is successfull, ensure that you can ID the chip by MAC:
+
+```bash
+esptool --port /dev/ttyACM0 --chip ESP32-C6 --no-stub read-mac
+```
+
 ## WT32-ETH01
 Check the Flashing Mode
 
