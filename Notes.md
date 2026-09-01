@@ -41,7 +41,7 @@ myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 --no-stub chip-id
 myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 erase-flash
 
 ### Flash new build
-myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 write_flash --flash_mode dio --flash_size detect 0x0 esp8266-midea-dehumidifier.ino.bin
+myvenv/bin/esptool --port /dev/ttyUSB0 --chip esp8266 write-flash --flash-mode dio --flash-size detect 0x0 esp8266-midea-dehumidifier.ino.bin
 ```
 
 Once flashed via serial, flashing via [OTA](https://github.com/JAndrassy/ArduinoOTA)
