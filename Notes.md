@@ -112,6 +112,18 @@ esphome clean-all
 esphome run wt32-eth01-SML-Hichi-IR.yaml --device 192.168.1.126
 ```
 
+### EMS-ESP32 on s_4M
+
+The `s_4M` is also just a `WT32-ETH01`, (the following info is based on the currently broken instructions on https://emsesp.org/Building).
+This worked with `EMS-ESP32` `v3.8.6` & `pio` `6.1.19`.
+Install `pio` in a python venv, and also create a `nodeenv` where you install `pnpm` with `npm install -g pnpm`.
+
+```bash
+pio run -e build-webUI
+pio run -e s_4M
+pio run --target upload --upload-port /dev/ttyUSB0 --environment s_4M
+```
+
 ## Hichi IR ttl
 
 Connectors:
